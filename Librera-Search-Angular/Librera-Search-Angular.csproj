@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30D428ED-6123-4FB1-88CE-DDAE661A36FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Angular_Example.App</RootNamespace>
+    <AssemblyName>Angular-Example.App</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="App\.gitignore" />
+    <Content Include="App\angular-16-crud-example.png" />
+    <Content Include="App\src\app\app.component.css" />
+    <Content Include="App\src\app\app.component.html" />
+    <Content Include="App\src\app\components\add-tutorial\add-tutorial.component.css" />
+    <Content Include="App\src\app\components\add-tutorial\add-tutorial.component.html" />
+    <Content Include="App\src\app\components\tutorial-details\tutorial-details.component.css" />
+    <Content Include="App\src\app\components\tutorial-details\tutorial-details.component.html" />
+    <Content Include="App\src\app\components\tutorials-list\tutorials-list.component.css" />
+    <Content Include="App\src\app\components\tutorials-list\tutorials-list.component.html" />
+    <Content Include="App\src\favicon.ico" />
+    <Content Include="App\src\index.html" />
+    <Content Include="App\src\styles.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="App\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="App\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="App\src\app\app.component.ts" />
+    <TypeScriptCompile Include="App\src\app\app.module.ts" />
+    <TypeScriptCompile Include="App\src\app\components\add-tutorial\add-tutorial.component.spec.ts" />
+    <TypeScriptCompile Include="App\src\app\components\add-tutorial\add-tutorial.component.ts" />
+    <TypeScriptCompile Include="App\src\app\components\tutorial-details\tutorial-details.component.spec.ts" />
+    <TypeScriptCompile Include="App\src\app\components\tutorial-details\tutorial-details.component.ts" />
+    <TypeScriptCompile Include="App\src\app\components\tutorials-list\tutorials-list.component.spec.ts" />
+    <TypeScriptCompile Include="App\src\app\components\tutorials-list\tutorials-list.component.ts" />
+    <TypeScriptCompile Include="App\src\app\models\tutorial.model.spec.ts" />
+    <TypeScriptCompile Include="App\src\app\models\tutorial.model.ts" />
+    <TypeScriptCompile Include="App\src\app\services\tutorial.service.spec.ts" />
+    <TypeScriptCompile Include="App\src\app\services\tutorial.service.ts" />
+    <TypeScriptCompile Include="App\src\main.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App\.editorconfig" />
+    <None Include="App\.vscode\extensions.json" />
+    <None Include="App\.vscode\launch.json" />
+    <None Include="App\.vscode\tasks.json" />
+    <None Include="App\angular.json" />
+    <None Include="App\package-lock.json" />
+    <None Include="App\package.json" />
+    <None Include="App\README.md" />
+    <None Include="App\src\assets\.gitkeep" />
+    <None Include="App\tsconfig.app.json" />
+    <None Include="App\tsconfig.json" />
+    <None Include="App\tsconfig.spec.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

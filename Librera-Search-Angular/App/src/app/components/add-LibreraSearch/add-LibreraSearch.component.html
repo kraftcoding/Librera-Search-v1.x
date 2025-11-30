@@ -1,0 +1,134 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+     
+      <div class="form-group">
+        <label for="modified">Modified</label>
+        <input
+          type="date"
+          class="form-control"
+          id="modified"
+          [(ngModel)]="LibreraSearch.modified"
+          name="modified"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="LibreraSearch.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Authors</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="LibreraSearch.authors"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="series">Series</label>
+        <input
+          type="text"
+          class="form-control"
+          id="series"
+          [(ngModel)]="LibreraSearch.series"
+          name="series"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="ids">Ids</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ids"
+          [(ngModel)]="LibreraSearch.ids"
+          name="ids"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="published">Published</label>
+        <input
+          type="date"
+          class="form-control"
+          id="published"
+          [(ngModel)]="LibreraSearch.published"
+          name="published"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="publisher">Publisher</label>
+        <input
+          type="text"
+          class="form-control"
+          id="publisher"
+          [(ngModel)]="LibreraSearch.publisher"
+          name="publisher"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="languages">Languages</label>
+        <input
+          type="text"
+          class="form-control"
+          id="languages"
+          [(ngModel)]="LibreraSearch.languages"
+          name="languages"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tags"
+          [(ngModel)]="LibreraSearch.tags"
+          name="tags"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="formats">Formats</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formats"
+          [(ngModel)]="LibreraSearch.formats"
+          name="formats"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="path">Path</label>
+        <input
+          type="text"
+          class="form-control"
+          id="path"
+          [(ngModel)]="LibreraSearch.path"
+          name="path"
+        />
+      </div>
+
+      <button (click)="saveLibreraSearch()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>LibreraSearch was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newLibreraSearch()">Add</button>
+    </div>
+  </div>
+</div>

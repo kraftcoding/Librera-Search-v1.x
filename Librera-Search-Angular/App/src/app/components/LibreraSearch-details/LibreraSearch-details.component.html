@@ -1,0 +1,190 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentLibreraSearch.id">
+    <h4>Librera Search</h4>
+    <div>
+      <label><strong>Title:</strong></label> {{ currentLibreraSearch.title }}
+    </div>
+    <div>
+      <label><strong>Authors:</strong></label>
+      {{ currentLibreraSearch.authors }}
+    </div>
+    <div>
+      <label><strong>Series:</strong></label>
+      {{ currentLibreraSearch.series }}
+    </div>
+
+    <a class="badge badge-warning"
+      routerLink="/LibreraSearch/id?id={{ currentLibreraSearch.id }}">
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentLibreraSearch">
+    <br />
+    <p>Please click on a LibreraSearch...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentLibreraSearch.id" class="edit-form">
+    <h4>LibreraSearch</h4>
+    <form>
+
+      <div class="form-group">
+        <label><strong>Id:</strong></label>
+        {{ currentLibreraSearch.id }}
+      </div>
+
+      <div class="form-group">
+        <label><strong>Modified:</strong></label>
+        {{ currentLibreraSearch.modified }}
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentLibreraSearch.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Authors</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentLibreraSearch.authors"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="series">Series</label>
+        <input
+          type="text"
+          class="form-control"
+          id="series"
+          [(ngModel)]="currentLibreraSearch.series"
+          name="series"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="ids">Ids</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ids"
+          [(ngModel)]="currentLibreraSearch.ids"
+          name="ids"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="published">Published</label>
+        <input
+          type="date"
+          class="form-control"
+          id="published"
+          [ngModel]="currentLibreraSearch.published | date:'yyyy-MM-dd'"         
+          name="published"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="publisher">Publisher</label>
+        <input
+          type="text"
+          class="form-control"
+          id="publisher"
+          [(ngModel)]="currentLibreraSearch.publisher"
+          name="publisher"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="languages">Languages</label>
+        <input
+          type="text"
+          class="form-control"
+          id="languages"
+          [(ngModel)]="currentLibreraSearch.languages"
+          name="languages"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tags"
+          [(ngModel)]="currentLibreraSearch.tags"
+          name="tags"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="formats">Formats</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formats"
+          [(ngModel)]="currentLibreraSearch.formats"
+          name="formats"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="path">Path</label>
+        <input
+          type="text"
+          class="form-control"
+          id="path"
+          [(ngModel)]="currentLibreraSearch.path"
+          name="path"
+        />
+      </div>
+
+    </form>
+
+    
+ <!--
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentLibreraSearch.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!currentLibreraSearch.published"
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
+  -->
+    <button class="badge badge-danger mr-2" (click)="deleteLibreraSearch()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateLibreraSearch()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentLibreraSearch.id">
+    <br />
+    <p>Cannot access this Librera Search...</p>
+  </div>
+</ng-template>

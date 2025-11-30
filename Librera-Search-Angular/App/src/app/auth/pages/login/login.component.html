@@ -1,0 +1,6 @@
+<p>Login:</p>
+<form [formGroup]="signinForm" >
+  <input placeholder="email"  formControlName="email">    
+  <input  placeholder="password"  formControlName="password">      
+  <button class="btn btn-outline-secondary" (click)="loginUser()" >Submit</button>  
+</form>
