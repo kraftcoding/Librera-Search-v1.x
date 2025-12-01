@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librera-Search-Angular", "L
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Librera-Search-SQL", "Librera-Search-SQL\Librera-Search-SQL.sqlproj", "{A103FA2F-5F25-4633-8EBE-7671F9EC6A9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librera-Search-WebAPI", "Librera-Search-WebAPI\Librera-Search-WebAPI.csproj", "{7B33563D-20C8-62A9-26B9-FA6D030B760B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreraSearch.WebAPI", "Librera-Search-WebAPI\LibreraSearch.WebAPI.csproj", "{7B33563D-20C8-62A9-26B9-FA6D030B760B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librera-Hangfire-Server", "Librera-Search-Hangfire\Librera-Hangfire-Server.csproj", "{AA676D70-22C6-A1E3-86A6-E3D4594DBE0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreraSearch.HangfireServer", "Librera-Search-Hangfire\LibreraSearch.HangfireServer.csproj", "{AA676D70-22C6-A1E3-86A6-E3D4594DBE0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

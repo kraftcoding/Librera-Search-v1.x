@@ -8,6 +8,9 @@
       <li class="nav-item">
         <a routerLink="add" class="nav-link">Add</a>
       </li>
+      <li class="nav-item">
+        <a href="http://localhost:5000/hangfire" class="nav-link">Jobs</a>
+      </li>
     </div>
     <div *ngIf="checkIsSignedIn()" class="logout-button">
       <button mat-raised-button color="primary" (click)="doLogout()">
