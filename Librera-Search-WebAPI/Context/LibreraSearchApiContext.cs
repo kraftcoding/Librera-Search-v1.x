@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using LibreraSearch.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibreraSearch.WebAPI.Models;
+namespace LibreraSearch.WebAPI.Context;
 
 public partial class LibreraSearchApiContext : DbContext
 {

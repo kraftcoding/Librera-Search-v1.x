@@ -1,4 +1,6 @@
-﻿using LibreraSearch.WebAPI.Models;
+﻿using LibreraSearch.WebAPI.Context;
+using LibreraSearch.WebAPI.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,15 +20,15 @@ namespace LibreraSearch.WebAPI.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        [Authorize(Policy="Authenticated")]
+        [HttpGet]               
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]       
         public async Task<IEnumerable<Books>> Get()
         {
             return await _context.Books.ToListAsync<Books>();
         }
 
         [HttpPost]
-        [Authorize(Policy = "Authenticated")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create(Books books)
         {
@@ -36,7 +38,7 @@ namespace LibreraSearch.WebAPI.Controllers
         }
 
         [HttpGet("id")]
-        [Authorize(Policy = "Authenticated")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [ProducesResponseType(typeof(Books), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetById(int id)
@@ -46,7 +48,7 @@ namespace LibreraSearch.WebAPI.Controllers
         }
 
         [HttpGet("title")]
-        [Authorize(Policy = "Authenticated")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [ProducesResponseType(typeof(Books), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetByTitle(string title)
@@ -56,17 +58,17 @@ namespace LibreraSearch.WebAPI.Controllers
         }              
 
         [HttpPut("{id}")]
-        [Authorize(Policy = "Authenticated")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> Update(int id, Books book)
         {
             if (id != book.id) return BadRequest();
             _context.Entry(book).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Policy = "Authenticated")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
@@ -79,7 +81,7 @@ namespace LibreraSearch.WebAPI.Controllers
         }
         
         [AcceptVerbs("DELETE")] //<-- To enable delete all
-        [Authorize(Policy = "Authenticated")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteAll()

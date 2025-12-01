@@ -1,4 +1,4 @@
-using LibreraSearch.WebAPI.Models;
+using LibreraSearch.WebAPI.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -24,17 +24,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
       options.TokenValidationParameters = new TokenValidationParameters
       {
           ValidateIssuer = true,
-          ValidIssuer = "Librera.Search.WebAPI",
+          ValidIssuer = builder.Configuration["Tokens:Issuer"],
           ValidateAudience = true,
-          ValidAudience = "Librera.Search.Users",
+          ValidAudience = builder.Configuration["Tokens:Audience"],
           ValidateLifetime = true,
-          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSecretKey"))
+          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Tokens:Key"]))
       };
   });
 
 builder.Services.AddAuthorization(
     options => options.AddPolicy("Authenticated",
-    policy => policy.RequireClaim("Name")));
+    policy => policy.RequireClaim("Email")));
 
 var app = builder.Build();
 

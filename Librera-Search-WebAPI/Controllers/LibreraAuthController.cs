@@ -1,4 +1,5 @@
-﻿using LibreraSearch.WebAPI.Models;
+﻿using LibreraSearch.WebAPI.Context;
+using LibreraSearch.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -34,10 +35,10 @@ namespace Authentication.WebAPI.Controllers
 
                 // Create JWT token using claims and secret key
                 var token = new JwtSecurityToken(
-                    issuer: "Librera.Search.WebAPI",
-                    audience: "Librera.Search.Users",
+                    issuer: "localhost",
+                    audience: "http://localhost:4200/",
                     claims: claims,
-                    expires: DateTime.UtcNow.AddMinutes(30), // Set expiry time
+                    expires: DateTime.UtcNow.AddMinutes(120), // Set expiry time
                     signingCredentials: new SigningCredentials(
                         new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ThisIsTheMostSecretStringEver123456789%")),
                         SecurityAlgorithms.HmacSha256
@@ -52,8 +53,8 @@ namespace Authentication.WebAPI.Controllers
 
         internal Login IsValidLogin(LoginModel model)
         {
-            var login = _context.Login.Where(a => a.Email.Contains(model.Email) &&
-                                                         a.Password.Contains(model.Password)).FirstOrDefault();
+            var login = _context.Login.Where(a => a.Email.Equals(model.Email) &&
+                                                         a.Password.Equals(model.Password)).FirstOrDefault();
             return login == null ? null : login;
         }
 

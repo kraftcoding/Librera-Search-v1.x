@@ -1,6 +1,10 @@
 <div *ngIf="viewMode; else editable">
   <div *ngIf="currentLibreraSearch.id">
     <h4>Librera Search</h4>
+     <div>
+      <label><strong>Modified:</strong></label>
+      {{ currentLibreraSearch.modified }}
+    </div>
     <div>
       <label><strong>Title:</strong></label> {{ currentLibreraSearch.title }}
     </div>
@@ -12,7 +16,35 @@
       <label><strong>Series:</strong></label>
       {{ currentLibreraSearch.series }}
     </div>
-
+     <div>
+      <label><strong>Ids:</strong></label>
+      {{ currentLibreraSearch.ids }}
+    </div>
+    <div>
+      <label><strong>Published:</strong></label>
+      {{ currentLibreraSearch.published | date:'mediumDate' }}
+    </div>
+    <div>
+      <label><strong>Publisher:</strong></label>
+      {{ currentLibreraSearch.publisher }}
+    </div>
+    <div>
+      <label><strong>Languages:</strong></label>
+      {{ currentLibreraSearch.languages }}
+    </div>
+    <div>
+      <label><strong>Tags:</strong></label>
+      {{ currentLibreraSearch.tags }}
+    </div>
+    <div>
+      <label><strong>Formats:</strong></label>
+      {{ currentLibreraSearch.formats }}
+    </div>
+    <div>
+      <label><strong>Path:</strong></label>
+      {{ currentLibreraSearch.path }}
+    </div>
+    <br />
     <a class="badge badge-warning"
       routerLink="/LibreraSearch/id?id={{ currentLibreraSearch.id }}">
       Edit
@@ -152,7 +184,7 @@
 
     </form>
 
-    
+ 
  <!--
     <button
       class="badge badge-primary mr-2"

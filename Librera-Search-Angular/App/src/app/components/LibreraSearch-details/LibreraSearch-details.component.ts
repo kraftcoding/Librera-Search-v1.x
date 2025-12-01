@@ -89,9 +89,15 @@ export class LibreraSearchDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.message = res.message
+
+          if(res == null){
+            this.message = 'The LibreraSearch was updated successfully!';
+          }
+
+          /*this.message = res.message
             ? res.message
-            : 'This LibreraSearch was updated successfully!';
+            : 'This LibreraSearch was updated successfully!';*/
+
         },
         error: (e) => console.error(e)
       });
@@ -101,7 +107,7 @@ export class LibreraSearchDetailsComponent implements OnInit {
     this.LibreraSearchService.delete(this.currentLibreraSearch.id).subscribe({
       next: (res) => {
         console.log(res);
-        this.router.navigate(['/LibreraSearchs']);
+        this.router.navigate(['/LibreraSearch']);
       },
       error: (e) => console.error(e)
     });

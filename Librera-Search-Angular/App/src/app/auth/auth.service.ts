@@ -15,8 +15,9 @@ export class AuthService {
   signIn(user: any) {
     return this.http
       .post<any>(this.Apiurl, user)
-      .subscribe((res: any) => {      
-        localStorage.setItem('access_token', res.access_token);
+      .subscribe((res: any) => {            
+        localStorage.setItem('access_token', res.token);
+        console.log("Login Successful:", localStorage.getItem('access_token'));
         this.router.navigate(['/LibreraSearch']);
       });
   }
