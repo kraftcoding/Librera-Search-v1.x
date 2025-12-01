@@ -1,4 +1,5 @@
 ﻿using LibreraSearch.WebAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -18,12 +19,14 @@ namespace LibreraSearch.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy="Authenticated")]
         public async Task<IEnumerable<Books>> Get()
         {
             return await _context.Books.ToListAsync<Books>();
         }
 
         [HttpPost]
+        [Authorize(Policy = "Authenticated")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create(Books books)
         {
@@ -33,6 +36,7 @@ namespace LibreraSearch.WebAPI.Controllers
         }
 
         [HttpGet("id")]
+        [Authorize(Policy = "Authenticated")]
         [ProducesResponseType(typeof(Books), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetById(int id)
@@ -42,6 +46,7 @@ namespace LibreraSearch.WebAPI.Controllers
         }
 
         [HttpGet("title")]
+        [Authorize(Policy = "Authenticated")]
         [ProducesResponseType(typeof(Books), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetByTitle(string title)
@@ -51,6 +56,7 @@ namespace LibreraSearch.WebAPI.Controllers
         }              
 
         [HttpPut("{id}")]
+        [Authorize(Policy = "Authenticated")]
         public async Task<IActionResult> Update(int id, Books book)
         {
             if (id != book.id) return BadRequest();
@@ -59,7 +65,8 @@ namespace LibreraSearch.WebAPI.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]       
+        [HttpDelete("{id}")]
+        [Authorize(Policy = "Authenticated")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
@@ -72,6 +79,7 @@ namespace LibreraSearch.WebAPI.Controllers
         }
         
         [AcceptVerbs("DELETE")] //<-- To enable delete all
+        [Authorize(Policy = "Authenticated")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteAll()
