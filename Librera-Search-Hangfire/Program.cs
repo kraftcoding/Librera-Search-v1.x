@@ -40,9 +40,15 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseHangfireDashboard("/hangfire");
 app.MapControllers();
 
-RecurringJob.AddOrUpdate("MyJob", () => app.Services.GetRequiredService<ITestRecurringJob>().RunAsync(), Cron.Minutely);
+// Change `Back to site` link URL
+var options = new DashboardOptions { AppPath = "http://localhost:4200/" };
+// Make `Back to site` link working for subfolder applications
+//var options = new DashboardOptions { AppPath = VirtualPathUtility.ToAbsolute("~") };
+
+app.UseHangfireDashboard("/hangfire", options);
+
+//RecurringJob.AddOrUpdate("MyJob", () => app.Services.GetRequiredService<ITestRecurringJob>().RunAsync(), Cron.Minutely);
 
 app.Run();
