@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
 
-constructor(public router:Router){}
+constructor(public router:Router, public authService: AuthService){}
 
   title = 'Librera Search';
   
@@ -18,4 +18,8 @@ constructor(public router:Router){}
     AuthService.prototype.doLogout.call(this);
     this.router.navigate(['/login']);
   }
+
+  checkIsSignedIn() {
+    return this.authService.isLoggedIn;
+  } 
 }
