@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreraSearch.WebAPI", "Lib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreraSearch.HangfireServer", "Librera-Search-Hangfire\LibreraSearch.HangfireServer.csproj", "{AA676D70-22C6-A1E3-86A6-E3D4594DBE0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Librera-Indexer-ConsoleApp", "Librera-Indexer-ConsoleApp\Librera-Indexer-ConsoleApp.csproj", "{43C74207-5D42-4787-921C-7212F7D92384}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreraSearch.Indexer", "LibreraSearch-Indexer\LibreraSearch.Indexer.csproj", "{D0901CD2-2F60-03F0-5463-2C92E3542874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreraSearch.Model", "LibreraSearch.Model\LibreraSearch.Model.csproj", "{9720D3D8-9719-49BC-BDB1-0C44C67D37CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +41,18 @@ Global
 		{AA676D70-22C6-A1E3-86A6-E3D4594DBE0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA676D70-22C6-A1E3-86A6-E3D4594DBE0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA676D70-22C6-A1E3-86A6-E3D4594DBE0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C74207-5D42-4787-921C-7212F7D92384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C74207-5D42-4787-921C-7212F7D92384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C74207-5D42-4787-921C-7212F7D92384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C74207-5D42-4787-921C-7212F7D92384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0901CD2-2F60-03F0-5463-2C92E3542874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0901CD2-2F60-03F0-5463-2C92E3542874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0901CD2-2F60-03F0-5463-2C92E3542874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0901CD2-2F60-03F0-5463-2C92E3542874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9720D3D8-9719-49BC-BDB1-0C44C67D37CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9720D3D8-9719-49BC-BDB1-0C44C67D37CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9720D3D8-9719-49BC-BDB1-0C44C67D37CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9720D3D8-9719-49BC-BDB1-0C44C67D37CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

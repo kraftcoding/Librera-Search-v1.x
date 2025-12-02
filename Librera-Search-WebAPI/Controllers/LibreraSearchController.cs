@@ -1,5 +1,5 @@
-﻿using LibreraSearch.WebAPI.Context;
-using LibreraSearch.WebAPI.Models;
+﻿using LibreraSearch.Model.Context;
+using LibreraSearch.Model.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

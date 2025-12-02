@@ -1,5 +1,5 @@
 ﻿
-namespace LibreraSearch.WebAPI.Models;
+namespace LibreraSearch.Model.Models;
 
 public partial class Login
 {

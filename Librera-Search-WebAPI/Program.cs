@@ -1,4 +1,4 @@
-using LibreraSearch.WebAPI.Context;
+using LibreraSearch.Model.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
