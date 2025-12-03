@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using LibreraSearch.Indexer;
+
+Console.WriteLine("Launching process");
+Indexer Indxr = new Indexer();
+Indxr.Start();
