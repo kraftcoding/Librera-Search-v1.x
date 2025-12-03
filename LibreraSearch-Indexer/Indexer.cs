@@ -13,7 +13,7 @@ namespace LibreraSearch.Indexer
 
         public void Stop()
         {
-           
+            // TODO: Implement stop logic if necessary
         }
     }
 }

@@ -11,4 +11,5 @@ export class LibreraSearch {
   tags?: string;
   formats?: string;
   path?: string;
+  indexed?: boolean;
 }

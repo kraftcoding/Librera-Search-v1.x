@@ -44,6 +44,10 @@
       <label><strong>Path:</strong></label>
       {{ currentLibreraSearch.path }}
     </div>
+    <div>
+      <label><strong>Indexed:</strong></label>
+      {{ currentLibreraSearch.indexed }}
+    </div>
     <br />
     <a class="badge badge-warning"
       routerLink="/LibreraSearch/id?id={{ currentLibreraSearch.id }}">
@@ -181,6 +185,16 @@
           name="path"
         />
       </div>
+
+      <div class="form-group">
+        <label for="indexed">Indexed</label>
+        <input
+          type="checkbox"
+          class="form-control"
+          id="indexed"
+          [(ngModel)]="currentLibreraSearch.indexed"
+          name="indexed"
+        /></div>
 
     </form>
 

@@ -21,8 +21,10 @@ export class AddLibreraSearchComponent {
     languages:  '',
     tags:  '',
     formats:  '',
-    path:  ''
+    path:  '',
+    indexed : false
   };
+
   submitted = false;
 
   constructor(private LibreraSearchService: LibreraSearchService) {}
@@ -40,7 +42,8 @@ export class AddLibreraSearchComponent {
         Languages:  this.LibreraSearch.languages,
         Tags:  this.LibreraSearch.tags,
         Formats:  this.LibreraSearch.formats,
-        Path:  this.LibreraSearch.path
+        Path:  this.LibreraSearch.path,
+        Indexed : this.LibreraSearch.indexed
     };
 
     this.LibreraSearchService.create(data).subscribe({
@@ -66,7 +69,8 @@ export class AddLibreraSearchComponent {
       languages:  '',
       tags:  '',
       formats:  '',
-      path:  ''
+      path:  '',
+      indexed : false
     };
   }
 }

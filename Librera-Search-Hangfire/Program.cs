@@ -27,8 +27,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<ITestRecurringJob, TestRecurringJob>();
-builder.Services.AddScoped<ITestJob, TestJob>();
+//builder.Services.AddTransient<ITestRecurringJob, TestRecurringJob>();
+//builder.Services.AddScoped<ITestJob, TestJob>();
+
+builder.Services.AddTransient<IBookIndexerJob, BookIndexerJob>();
 
 var app = builder.Build();
 
@@ -49,6 +51,6 @@ var options = new DashboardOptions { AppPath = "http://localhost:4200/" };
 
 app.UseHangfireDashboard("/hangfire", options);
 
-//RecurringJob.AddOrUpdate("MyJob", () => app.Services.GetRequiredService<ITestRecurringJob>().RunAsync(), Cron.Minutely);
+RecurringJob.AddOrUpdate("BookIndexerJob", () => app.Services.GetRequiredService<IBookIndexerJob>().RunAsync(), Cron.Daily);
 
 app.Run();

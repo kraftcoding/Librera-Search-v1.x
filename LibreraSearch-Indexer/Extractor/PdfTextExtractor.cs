@@ -1,5 +1,5 @@
 ﻿using Syncfusion.Pdf;
-using Syncfusion.Pdf.Parsing
+using Syncfusion.Pdf.Parsing;
 using System.Text;
 
 public class PdfTextExtractor

@@ -23,7 +23,8 @@ export class LibreraSearchDetailsComponent implements OnInit {
     languages:  '',
     tags:  '',
     formats:  '',
-    path:  ''
+    path:  '',
+    indexed : false
   };
 
   message = '';
@@ -64,7 +65,8 @@ export class LibreraSearchDetailsComponent implements OnInit {
       Languages:  this.currentLibreraSearch.languages,
       Tags:  this.currentLibreraSearch.tags,
       Formats:  this.currentLibreraSearch.formats,
-      Path:  this.currentLibreraSearch.path
+      Path:  this.currentLibreraSearch.path,
+      Indexed : this.currentLibreraSearch.indexed
     };
 
     this.message = '';
