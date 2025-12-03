@@ -65,6 +65,5 @@
     <Build Include="dbo\Tables\Login.sql" />
     <Build Include="dbo\Tables\IndexedBookContent.sql" />
     <Build Include="Storage\IndexedBookContent_catalog.sql" />
-    <Build Include="FullTextIndexes.sql" />
   </ItemGroup>
 </Project>

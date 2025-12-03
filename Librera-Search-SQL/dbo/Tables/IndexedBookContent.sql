@@ -3,7 +3,8 @@
     [bookId]      INT      NOT NULL,
     [Modified]    DATETIME NOT NULL,
     [TextContent] TEXT     NOT NULL,
+    [PageNumber]  INT      NOT NULL,
     CONSTRAINT [PK_IndexedBookContent] PRIMARY KEY CLUSTERED ([id] ASC),
-    CONSTRAINT [FK_IndexedBookContent_Books] FOREIGN KEY ([bookId]) REFERENCES [dbo].[Books] ([id])
+    CONSTRAINT [FK_IndexedBookContent_Books] FOREIGN KEY ([bookId]) REFERENCES [dbo].[Books] ([id]) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
