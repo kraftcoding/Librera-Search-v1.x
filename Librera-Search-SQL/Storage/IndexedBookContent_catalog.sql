@@ -1,0 +1,4 @@
+﻿CREATE FULLTEXT CATALOG [IndexedBookContent_catalog]
+    WITH ACCENT_SENSITIVITY = ON
+    AUTHORIZATION [dbo];
+

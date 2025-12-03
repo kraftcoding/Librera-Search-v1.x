@@ -11,6 +11,7 @@
     [Tags]      NVARCHAR (MAX) NULL,
     [Formats]   NVARCHAR (50)  NULL,
     [Path]      NVARCHAR (MAX) NULL,
+    [Indexed]   BIT            CONSTRAINT [DF_Books_Indexed] DEFAULT ((0)) NOT NULL,
     PRIMARY KEY CLUSTERED ([id] ASC)
 );
 

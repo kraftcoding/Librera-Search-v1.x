@@ -8,12 +8,7 @@ namespace LibreraSearch.Indexer
         public void Start()
         {
             BookStoreMngr bookStoreMngr = new BookStoreMngr();
-            List<Books> books =  bookStoreMngr.GetBooksToIndex();
-
-            foreach (var book in books)
-            {
-                List<string> stringsList = PdfTextExtractor.ExtractTextFromPdf(book.Path);
-            }
+            bookStoreMngr.ProcessBooks();
         }
 
         public void Stop()

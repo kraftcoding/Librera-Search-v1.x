@@ -26,4 +26,6 @@ public partial class Books
     public string? Formats { get; set; }
 
     public string? Path { get; set; }
+
+    public bool Indexed { get; set; }
 }
