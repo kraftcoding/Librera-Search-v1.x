@@ -1,13 +1,5 @@
 ﻿using LibreraSearch.Model.Context;
 using LibreraSearch.Model.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace LibreraSearch.Indexer.Managers
 {
@@ -50,24 +42,32 @@ namespace LibreraSearch.Indexer.Managers
 
         internal bool UpdateBookContent(List<string> stringList, int bookId)
         {
-            string s = string.Join("", stringList);
+            int i = 1;
 
-            IndexedBookContent ibc = _context.IndexedBookContent.Where(ibc => ibc.bookId == bookId).FirstOrDefault();
-
-            if(ibc != null)
+            foreach (string s in stringList)
             {
-                ibc.modified = DateTime.Now;
-                ibc.TextContent = s;                
-                _context.IndexedBookContent.Update(ibc);                
-            }
-            else
-            {
-                _context.IndexedBookContent.AddRange(stringList.Select(s => new IndexedBookContent
+                IndexedBookContent ibc = _context.IndexedBookContent.Where((ibc => ibc.bookId == bookId && 
+                                                                            ibc.PageNumber == i)).FirstOrDefault();
+                
+                if (ibc != null)
                 {
-                    bookId = bookId,
-                    modified = DateTime.Now,
-                    TextContent = s
-                }));
+                    ibc.modified = DateTime.Now;
+                    ibc.TextContent = s;
+                    ibc.PageNumber = i;
+                    _context.IndexedBookContent.Update(ibc);
+                }
+                else
+                {
+                    _context.IndexedBookContent.AddRange(stringList.Select(s => new IndexedBookContent
+                    {
+                        bookId = bookId,
+                        modified = DateTime.Now,
+                        TextContent = s,
+                        PageNumber = i
+                    }));
+                }
+
+                i++;
             }
 
             _context.SaveChanges();

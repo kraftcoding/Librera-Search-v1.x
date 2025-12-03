@@ -8,6 +8,8 @@
 
         public DateTime modified { get; set; }
 
-        public string TextContent { get; set; } = null!;        
+        public string TextContent { get; set; } = null!;
+
+        public int PageNumber { get; set; }
     }
 }

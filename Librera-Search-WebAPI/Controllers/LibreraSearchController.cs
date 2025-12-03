@@ -73,9 +73,9 @@ namespace LibreraSearch.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
         {
-            var userToDelete = await _context.Books.FindAsync(id);
-            if (userToDelete == null) return NotFound();
-            _context.Books.Remove(userToDelete);
+            var book = await _context.Books.FindAsync(id);
+            if (book == null) return NotFound();
+            _context.Books.Remove(book);
             await _context.SaveChangesAsync();
             return NoContent();
         }
