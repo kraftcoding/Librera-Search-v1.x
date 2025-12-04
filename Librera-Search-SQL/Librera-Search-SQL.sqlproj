@@ -60,6 +60,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="Storage\" />
     <Folder Include="SCRIPTS" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Books.sql" />
@@ -67,5 +68,6 @@
     <Build Include="dbo\Tables\IndexedBookContent.sql" />
     <Build Include="Storage\IndexedBookContent_catalog.sql" />
     <Build Include="SCRIPTS\CREATE PROC [dbo].[SearchIndexBookContent].sql" />
+    <Build Include="dbo\Stored Procedures\SearchTextFromIndexBookContent.sql" />
   </ItemGroup>
 </Project>
