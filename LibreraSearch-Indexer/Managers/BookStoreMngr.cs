@@ -30,7 +30,7 @@ namespace LibreraSearch.Indexer.Managers
                         List<string> stringsList = PdfTextExtractor.ExtractTextFromPdf(book.Path);
                         if (stringsList.Count > 0)
                         {
-                            book.Indexed = UpdateBookContent(stringsList, book.id);
+                            book.Indexed = UpdateBookContent(stringsList, book);
                             UpdateBook(book);
                         }
                     }
@@ -40,13 +40,13 @@ namespace LibreraSearch.Indexer.Managers
             }
         }
 
-        internal bool UpdateBookContent(List<string> stringList, int bookId)
+        internal bool UpdateBookContent(List<string> stringList, Books books)
         {
             int i = 1;
 
             foreach (string s in stringList)
             {
-                IndexedBookContent ibc = _context.IndexedBookContent.Where((ibc => ibc.bookId == bookId && 
+                IndexedBookContent ibc = _context.IndexedBookContent.Where((ibc => ibc.bookId == books.id && 
                                                                             ibc.PageNumber == i)).FirstOrDefault();
                 
                 if (ibc != null)
@@ -54,16 +54,21 @@ namespace LibreraSearch.Indexer.Managers
                     ibc.modified = DateTime.Now;
                     ibc.TextContent = s;
                     ibc.PageNumber = i;
+                    ibc.Title = books.Title;
+                    ibc.Authors = books.Authors;
+
                     _context.IndexedBookContent.Update(ibc);
                 }
                 else
                 {
                     _context.IndexedBookContent.AddRange(stringList.Select(s => new IndexedBookContent
                     {
-                        bookId = bookId,
+                        bookId = books.id,
                         modified = DateTime.Now,
                         TextContent = s,
-                        PageNumber = i
+                        PageNumber = i,
+                        Title = books.Title,
+                        Authors = books.Authors
                     }));
                 }
 

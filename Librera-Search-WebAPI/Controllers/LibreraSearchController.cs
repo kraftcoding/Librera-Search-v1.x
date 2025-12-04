@@ -3,8 +3,9 @@ using LibreraSearch.Model.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Data;
 
 
 namespace LibreraSearch.WebAPI.Controllers
@@ -89,6 +90,16 @@ namespace LibreraSearch.WebAPI.Controllers
             _context.Books.RemoveRange(_context.Books); 
             await _context.SaveChangesAsync();
             return NoContent();
-        }       
+        }
+
+        [HttpGet("key")]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [ProducesResponseType(typeof(IndexedBookContent), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetByContentByKey(string key)
+        {
+            var contentList = await _context.IndexedBookContent.FromSqlRaw("EXEC dbo.SearchTextContent @Key = {0}", key).ToListAsync(); 
+            return contentList == null ? NotFound() : Ok(contentList);
+        }
     }
 }

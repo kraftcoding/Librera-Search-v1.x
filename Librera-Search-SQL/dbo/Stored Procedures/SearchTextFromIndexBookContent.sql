@@ -1,12 +1,14 @@
 ﻿
-CREATE PROC [dbo].[SearchTextFromIndexBookContent] @SearchStr varchar(128)
+CREATE PROC [dbo].[SearchTextFromIndexBookContent] @TextContetnt varchar(128)
 AS
 BEGIN   
     SET NOCOUNT ON
-	SELECT * FROM IndexedBookContent
-	WHERE TextContent LIKE  '%' + @SearchStr + '%'
+	SELECT ibc.bookId, ibc.Modified, ibc.PageNumber, ibc.TextContent, bks.Title, bks.Authors FROM IndexedBookContent ibc
+	LEFT JOIN Books bks ON ibc.bookId = bks.id 
+	WHERE TextContent LIKE  '%' + @TextContetnt + '%'
+	ORDER BY bks.Title
 END
 
 -- TEST
 --use LibreraSearch 
---exec dbo.SearchTextFromIndexBookContent @SearchStr = 'encrypt storage'
+--exec dbo.SearchTextFromIndexBookContent @TextContetnt = 'encrypt storage'

@@ -11,5 +11,9 @@
         public string TextContent { get; set; } = null!;
 
         public int PageNumber { get; set; }
+
+        public string Title { get; set; }
+
+        public string? Authors { get; set; }
     }
 }
