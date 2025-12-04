@@ -66,6 +66,6 @@
     <Build Include="dbo\Tables\Login.sql" />
     <Build Include="dbo\Tables\IndexedBookContent.sql" />
     <Build Include="Storage\IndexedBookContent_catalog.sql" />
-    <Build Include="dbo\Stored Procedures\SearchTextFromIndexBookContent.sql" />
+    <Build Include="dbo\Stored Procedures\SearchTextContent.sql" />
   </ItemGroup>
 </Project>

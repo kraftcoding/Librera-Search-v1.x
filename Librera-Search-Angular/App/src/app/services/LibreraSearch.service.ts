@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LibreraSearch } from '../models/LibreraSearch.model';
+import { LibreraTextSearch } from '../models/LibreraTextSearch.model';
 
-const baseUrl = 'http://localhost:5000/api/LibreraSearch';
+const baseUrl = 'http://localhost:5001/api/LibreraSearch';
 
 @Injectable({
   providedIn: 'root',
@@ -38,5 +39,9 @@ export class LibreraSearchService {
 
   findByTitle(title: any): Observable<LibreraSearch[]> {
     return this.http.get<LibreraSearch[]>(`${baseUrl}/title?title=${title}`);
+  }
+
+  findByTextContent(textContent: any): Observable<LibreraTextSearch[]> {
+    return this.http.get<LibreraTextSearch[]>(`${baseUrl}/key?key=${textContent}`);
   }
 }

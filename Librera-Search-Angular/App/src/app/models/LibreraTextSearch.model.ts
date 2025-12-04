@@ -1,16 +1,9 @@
-export class LibreraSearch {
+export class LibreraTextSearch {
   id : any;
   bookId : any;
-  modified : any;
+  modified : any; 
+  textContent?: string;
+  pageNumber?: number  
   title : any;
   authors?: string;
-  series?: number
-  ids?: string;
-  published?: Date;
-  publisher?: string;
-  languages?: string;
-  tags?: string;
-  formats?: string;
-  path?: string;
-  indexed?: boolean;
 }

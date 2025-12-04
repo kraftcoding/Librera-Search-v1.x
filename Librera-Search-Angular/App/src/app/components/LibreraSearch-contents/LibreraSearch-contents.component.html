@@ -1,0 +1,37 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Text Content"
+         [(ngModel)]="this.textContent"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchByTextContent()"
+        >
+          Search by Text Content
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Librera Text Search List</h4>
+    <ul class="list-group">
+      <div
+        class="list-group-item"
+        *ngFor="let LibreraTextSearch of LibreraTextSearch; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveLibreraTextSearch(LibreraTextSearch, i)"
+      >
+        <p><b>Title:</b>{{ LibreraTextSearch.title }}</p>
+        <p><b>Authors:</b>{{ LibreraTextSearch.authors }}</p>
+        <p><b>PageNumber:</b>{{ LibreraTextSearch.pageNumber }}</p>
+        {{ LibreraTextSearch.textContent }}
+    </div>
+    </ul>
+  </div>  
+</div>

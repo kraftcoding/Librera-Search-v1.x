@@ -7,6 +7,7 @@ import { LibreraSearchService } from 'src/app/services/LibreraSearch.service';
   templateUrl: './LibreraSearch-list.component.html',
   styleUrls: ['./LibreraSearch-list.component.css'],
 })
+
 export class LibreraSearchsListComponent implements OnInit {
   LibreraSearchs?: LibreraSearch[];
   currentLibreraSearch: LibreraSearch = {id: '', modified: '', title: ''  };

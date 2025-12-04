@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LibreraSearchsListComponent } from './components/LibreraSearch-list/LibreraSearch-list.component';
 import { LibreraSearchDetailsComponent } from './components/LibreraSearch-details/LibreraSearch-details.component';
 import { AddLibreraSearchComponent } from './components/add-LibreraSearch/add-LibreraSearch.component';
+import { LibreraTextSearchListComponent } from './components/LibreraSearch-contents/LibreraSearch-contents.component';
 import { LoginComponent } from './auth/pages/login/login.component';
 import { AuthService } from './auth/auth.service';
 import { inject } from '@angular/core';
@@ -20,6 +21,11 @@ export const routes: Routes = [
         ]
    },
   { path: 'add', component: AddLibreraSearchComponent,
+    canActivate: [
+          () => inject(AuthService).isLoggedIn
+        ]
+   }, 
+   { path: 'LibreraTextSearch', component: LibreraTextSearchListComponent,
     canActivate: [
           () => inject(AuthService).isLoggedIn
         ]
