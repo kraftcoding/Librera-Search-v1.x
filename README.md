@@ -4,9 +4,9 @@ Librera Search v1.x solution built with Angular 16, Hangfire Server and .Net 8; 
 
 The application contains the next functionality:
 
-- Each register has id, title ,authors ,series, ids, published, publisher, languages, tags, formats, path
-- We can create, retrieve, update, delete records, index and search PDFs linked to the records
-- There is a Search bar for finding registers by title
+- Each register has id, title ,authors ,series, ids, published, publisher, languages, tags, formats, path and indexed content
+- We can create, retrieve, update, delete records, launch index service and search PDF content linked to the records
+- There are two pages for finding registers by title or search indexed content
 - JWT (JSON Web Token) format used for authentication
 - Policy-based authorization in the endpoints
 
