@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { LibreraSearch } from '../models/LibreraSearch.model';
 import { LibreraTextSearch } from '../models/LibreraTextSearch.model';
 
-const baseUrl = 'http://localhost:5001/api/LibreraSearch';
+const baseUrl = 'http://localhost:5000/api/LibreraSearch';
 
 @Injectable({
   providedIn: 'root',

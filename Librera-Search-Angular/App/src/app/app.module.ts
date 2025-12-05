@@ -15,13 +15,15 @@ import {provideClientHydration} from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter, Route } from '@angular/router';
 import { routes } from './app-routing.module';
+import { LibreraTextSearchListComponent } from './components/LibreraSearch-contents/LibreraSearch-contents.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddLibreraSearchComponent,
     LibreraSearchDetailsComponent,
-    LibreraSearchsListComponent
+    LibreraSearchsListComponent,
+    LibreraTextSearchListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { routes } from './app-routing.module';
   ],
   providers: [
     provideHttpClient(withInterceptors([authInterceptor])),
-    {provide: 'APIREQRES', useValue:'http://localhost:5001/api/login'},
+    {provide: 'APIREQRES', useValue:'http://localhost:5000/api/login'},
     provideClientHydration(),
     provideAnimations(),
     provideRouter(routes)

@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LibreraTextSearch } from 'src/app/models/LibreraTextSearch.model';
 import { LibreraSearchService } from 'src/app/services/LibreraSearch.service';
-import { FormsModule  } from '@angular/forms';
-import { CommonModule} from '@angular/common'
-
 
 @Component({
   selector: 'app-LibreraTextSearchs-list',
   templateUrl: './LibreraSearch-contents.component.html',
-  styleUrls: ['./LibreraSearch-contents.component.css'],
-  standalone: true,
-  imports: [FormsModule, CommonModule]
+  styleUrls: ['./LibreraSearch-contents.component.css']
 })
 
 export class LibreraTextSearchListComponent implements OnInit {
