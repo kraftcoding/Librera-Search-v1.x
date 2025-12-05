@@ -24,8 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SCRIPTS", "SCRIPTS", "{02EA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOCS", "DOCS", "{6195FCE7-D97C-4778-8840-89BB91A5D9F7}"
 	ProjectSection(SolutionItems) = preProject
-		DOCS\Librera Search v1.x v1 - Technical Document.odt = DOCS\Librera Search v1.x v1 - Technical Document.odt
-		DOCS\Librera Search v1.x v1 - Technical Document.pdf = DOCS\Librera Search v1.x v1 - Technical Document.pdf
+		DOCS\Librera Search v1.x - Technical Document.odt = DOCS\Librera Search v1.x - Technical Document.odt
+		DOCS\Librera Search v1.x - Technical Document.pdf = DOCS\Librera Search v1.x - Technical Document.pdf
 	EndProjectSection
 EndProject
 Global
