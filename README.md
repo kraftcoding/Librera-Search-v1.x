@@ -2,6 +2,8 @@
 
 Librera Search v1.x solution built with Angular 16, Hangfire Server and .Net 8; enables to index content from PDFs making it searchable with the possibility to classify them by the Web UI. Implements token-based authentication for registered users and policy-based authorization in the endpoints.
 
+For more details, check out the documentation included: https://github.com/kraftcoding/Librera-Search-v1.x/blob/master/DOCS/Librera%20Search%20v1.x%20v1%20-%20Technical%20Document.pdf
+
 The application contains the next functionality:
 
 - Each register has id, title ,authors ,series, ids, published, publisher, languages, tags, formats, path and indexed content
