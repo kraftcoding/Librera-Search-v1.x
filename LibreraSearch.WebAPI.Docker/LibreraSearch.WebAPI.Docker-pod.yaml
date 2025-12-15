@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: librerasearchwebapidocker
+spec:
+  containers:
+  - name: librerasearchwebapidocker
+    image: kraftcoding/librerasearchwebapidocker:dev
+    ports:
+    - containerPort: 8081

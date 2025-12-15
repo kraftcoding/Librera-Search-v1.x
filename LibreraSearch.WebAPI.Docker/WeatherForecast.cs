@@ -1,4 +1,4 @@
-namespace ASP.NETCore.ArticlesWebAPI
+namespace LibreraSearch.WebAPI.Docker
 {
     public class WeatherForecast
     {
