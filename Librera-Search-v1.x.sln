@@ -20,7 +20,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SCRIPTS", "SCRIPTS", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 	ProjectSection(SolutionItems) = preProject
 		SCRIPTS\CORS-disable-web-security.bat = SCRIPTS\CORS-disable-web-security.bat
-		SCRIPTS\Minikube and Docker Commands.txt = SCRIPTS\Minikube and Docker Commands.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOCS", "DOCS", "{6195FCE7-D97C-4778-8840-89BB91A5D9F7}"
@@ -28,8 +27,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOCS", "DOCS", "{6195FCE7-D
 		DOCS\Librera Search Solution - Technical Document.odt = DOCS\Librera Search Solution - Technical Document.odt
 		DOCS\Librera Search Solution - Technical Document.pdf = DOCS\Librera Search Solution - Technical Document.pdf
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreraSearch.WebAPI.Docker", "LibreraSearch.WebAPI.Docker\LibreraSearch.WebAPI.Docker.csproj", "{115C5231-C1B2-53FB-0872-DE332E937639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,10 +64,6 @@ Global
 		{9720D3D8-9719-49BC-BDB1-0C44C67D37CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9720D3D8-9719-49BC-BDB1-0C44C67D37CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9720D3D8-9719-49BC-BDB1-0C44C67D37CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{115C5231-C1B2-53FB-0872-DE332E937639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{115C5231-C1B2-53FB-0872-DE332E937639}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{115C5231-C1B2-53FB-0872-DE332E937639}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{115C5231-C1B2-53FB-0872-DE332E937639}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

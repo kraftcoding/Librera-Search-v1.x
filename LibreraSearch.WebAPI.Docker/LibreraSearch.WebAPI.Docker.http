@@ -1,6 +1,0 @@
-@LibreraSearch.WebAPI.Docker_HostAddress = http://localhost:5278
-
-GET {{LibreraSearch.WebAPI.Docker_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
